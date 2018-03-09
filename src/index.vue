@@ -58,8 +58,12 @@ export default {
       this.datepicker.redraw()
       this.datepicker.jumpToDate()
     },
-    setDate (newDate, oldDate) {
-      newDate && this.datepicker.setDate(newDate)
+    setDate (newDate) {
+      if (newDate) {
+        this.datepicker.setDate(newDate)
+      } else {
+        this.datepicker.clear()
+      }
     },
     dateUpdated (selectedDates, dateStr) {
       this.date = dateStr
